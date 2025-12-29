@@ -41,7 +41,7 @@ export default function About() {
       <div className="max-w-5xl mx-auto">
         <div className={`card ${isVisible ? 'fade-in' : 'opacity-0'}`}>
           <p className="text-lg md:text-xl text-navy-700 leading-relaxed mb-8">
-            Frontend Developer with <span className="font-bold text-teal-600 text-2xl">4+ years of experience</span> delivering 
+            Frontend Developer with <span className="font-bold text-teal-600 text-2xl">4 years of experience</span> delivering 
             scalable, responsive, and high-performance web applications. Specialized in{' '}
             <span className="font-bold text-navy-900">React.js</span>,{' '}
             <span className="font-bold text-navy-900">Next.js</span> and{' '}

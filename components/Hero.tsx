@@ -93,7 +93,7 @@ export default function Hero() {
 
           <div className="grid grid-cols-3 gap-4 md:gap-8 max-w-2xl mx-auto mb-12">
             <div className="bg-white rounded-lg shadow-md p-6 text-center border border-gray-200">
-              <div className="text-3xl md:text-4xl font-bold text-teal-600 font-display">4+</div>
+              <div className="text-3xl md:text-4xl font-bold text-teal-600 font-display">4</div>
               <div className="text-sm md:text-base text-navy-600 mt-1">Years Experience</div>
             </div>
             <div className="bg-white rounded-lg shadow-md p-6 text-center border border-gray-200">
