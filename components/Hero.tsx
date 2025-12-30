@@ -49,23 +49,32 @@ export default function Hero() {
           <h1 className="text-5xl md:text-7xl font-bold text-navy-900 mb-4 font-display">
             Gella Sandeep Kumar
           </h1>
-          
+
           <h2 className="text-2xl md:text-4xl text-navy-700 mb-4 h-12 md:h-16 flex items-center justify-center font-display">
             <span className="font-semibold text-teal-600">{text}</span>
             <span className="animate-pulse text-teal-600 ml-1">|</span>
           </h2>
-          
+
           <p className="text-lg md:text-xl text-navy-600 mb-12 max-w-3xl mx-auto leading-relaxed">
             Building <span className="font-semibold text-navy-900">scalable</span>,{' '}
             <span className="font-semibold text-navy-900">responsive</span>, and{' '}
             <span className="font-semibold text-navy-900">high-performance</span> web applications
             with React.js and Next.js
           </p>
-          
+
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a
-              href="tel:+9398415617"
+              href="/Sandeep_Resume.pdf"
+              download="Sandeep_Resume.pdf"
               className="group flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-teal-600 to-teal-700 text-white rounded-lg hover:from-teal-700 hover:to-teal-800 transition-all duration-300 shadow-md hover:shadow-lg"
+              aria-label="Download Resume"
+            >
+              <FaDownload />
+              <span>Download Resume</span>
+            </a>
+            <a
+              href="tel:+9398415617"
+              className="group flex items-center gap-2 px-6 py-3 bg-white text-navy-700 border border-gray-200 rounded-lg hover:border-teal-500 hover:text-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
               aria-label="Call me"
             >
               <FaPhone />
@@ -73,7 +82,7 @@ export default function Hero() {
             </a>
             <a
               href="mailto:sandeepkumargella@gmail.com"
-              className="group flex items-center gap-2 px-6 py-3 bg-navy-700 text-white rounded-lg hover:bg-navy-800 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="group flex items-center gap-2 px-6 py-3 bg-white text-navy-700 border border-gray-200 rounded-lg hover:border-teal-500 hover:text-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
               aria-label="Email me"
             >
               <FaEnvelope />
@@ -83,7 +92,7 @@ export default function Hero() {
               href="https://www.linkedin.com/in/sandeepkumargella/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center gap-2 px-6 py-3 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition-all duration-300 shadow-md hover:shadow-lg"
+              className="group flex items-center gap-2 px-6 py-3 bg-white text-navy-700 border border-gray-200 rounded-lg hover:border-teal-500 hover:text-teal-600 transition-all duration-300 shadow-md hover:shadow-lg"
               aria-label="LinkedIn profile"
             >
               <FaLinkedin />

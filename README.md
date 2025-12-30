@@ -16,7 +16,7 @@ A modern, professional portfolio website built with Next.js, React.js, and Tailw
   - About with experience highlights
   - Technical Skills with categorized display
   - Featured Projects showcase
-  - Work Experience timeline
+  
   - Education
   - Key Achievements
   - Contact information
@@ -71,8 +71,7 @@ portfolio/
 │   ├── Hero.tsx
 │   ├── About.tsx
 │   ├── Skills.tsx
-│   ├── Projects.tsx
-│   ├── Experience.tsx
+
 │   ├── Education.tsx
 │   ├── Achievements.tsx
 │   ├── Contact.tsx
