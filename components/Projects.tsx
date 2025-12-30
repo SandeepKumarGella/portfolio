@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+
 import { FaCode, FaCalendarAlt, FaBriefcase } from 'react-icons/fa'
 import { SiNextdotjs, SiReact } from 'react-icons/si'
 
@@ -15,31 +15,9 @@ interface Project {
   gradient: string
 }
 
+import FadeIn from './ui/FadeIn'
+
 export default function Projects() {
-  const [isVisible, setIsVisible] = useState(false)
-  const sectionRef = useRef<HTMLElement>(null)
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true)
-        }
-      },
-      { threshold: 0.1 }
-    )
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current)
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current)
-      }
-    }
-  }, [])
-
   const projects: Project[] = [
     {
       name: 'Verizon Project',
@@ -102,58 +80,60 @@ export default function Projects() {
   ]
 
   return (
-    <section id="projects" ref={sectionRef} className="section-container bg-gray-50">
-      <h2 className="section-title">Projects & Experience</h2>
+    <section id="projects" className="section-container bg-gray-50">
+      <FadeIn>
+        <h2 className="section-title">Projects & Experience</h2>
+      </FadeIn>
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
         {projects.map((project, index) => (
-          <div
-            key={index}
-            className={`card group hover:scale-105 transition-transform duration-300 ${isVisible ? 'fade-in' : 'opacity-0'}`}
-            style={{ animationDelay: `${index * 0.15}s` }}
-          >
-            <div className="flex items-start justify-between mb-4">
-              <div className={`p-4 rounded-lg bg-gradient-to-r ${project.gradient} text-white mb-4`}>
-                <project.icon className="text-3xl" />
+          <FadeIn key={index} delay={index * 0.15} fullWidth>
+            <div className="card group hover:scale-[1.02] hover:shadow-xl transition-all duration-300 h-full">
+              <div className="flex items-start justify-between mb-4">
+                <div className={`p-4 rounded-lg bg-gradient-to-r ${project.gradient} text-white mb-4 shadow-md`}>
+                  <project.icon className="text-3xl" />
+                </div>
+                <div className="flex items-center gap-2 text-sm text-navy-600 bg-white px-3 py-1 rounded-full border border-gray-100 shadow-sm">
+                  <FaCalendarAlt className="text-teal-600" />
+                  <span className="font-medium">{project.duration}</span>
+                </div>
               </div>
-              <div className="flex items-center gap-2 text-sm text-navy-600">
-                <FaCalendarAlt className="text-teal-600" />
-                <span className="font-medium">{project.duration}</span>
-              </div>
-            </div>
-            
-            <div className="mb-4">
-              <h3 className="text-2xl font-bold text-navy-900 mb-2 font-display">{project.name}</h3>
-              <div className="flex items-center gap-2 text-teal-600 mb-2">
-                <FaBriefcase className="text-sm" />
-                <span className="font-semibold">{project.company}</span>
-              </div>
-            </div>
-            
-            <p className="text-navy-600 mb-4 leading-relaxed">{project.description}</p>
-            
-            <div className="mb-4">
-              <h4 className="text-sm font-semibold text-navy-700 mb-2">Technologies:</h4>
-              <div className="flex flex-wrap gap-2">
-                {project.technologies.map((tech, techIndex) => (
-                  <span
-                    key={techIndex}
-                    className="px-3 py-1 bg-gray-100 text-navy-700 rounded-full text-xs font-medium border border-gray-200"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </div>
 
-            <ul className="space-y-2">
-              {project.highlights.map((highlight, highlightIndex) => (
-                <li key={highlightIndex} className="flex items-start gap-2 text-sm text-navy-600">
-                  <span className="text-teal-600 mt-1">▸</span>
-                  <span>{highlight}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
+              <div className="mb-4">
+                <h3 className="text-2xl font-bold text-navy-900 mb-2 font-display">{project.name}</h3>
+                <div className="flex items-center gap-2 text-teal-600 mb-2">
+                  <FaBriefcase className="text-sm" />
+                  <span className="font-semibold">{project.company}</span>
+                </div>
+              </div>
+
+              <p className="text-navy-600 mb-6 leading-relaxed bg-gray-50 p-3 rounded-lg border border-gray-100 text-sm">
+                {project.description}
+              </p>
+
+              <div className="mb-4">
+                <h4 className="text-sm font-semibold text-navy-700 mb-2 uppercase tracking-wider text-xs">Technologies:</h4>
+                <div className="flex flex-wrap gap-2">
+                  {project.technologies.map((tech, techIndex) => (
+                    <span
+                      key={techIndex}
+                      className="px-3 py-1 bg-white text-navy-700 rounded-full text-xs font-semibold border border-gray-200 shadow-sm"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
+
+              <ul className="space-y-2 mt-auto pt-4 border-t border-gray-100">
+                {project.highlights.map((highlight, highlightIndex) => (
+                  <li key={highlightIndex} className="flex items-start gap-2 text-sm text-navy-600">
+                    <span className="text-teal-600 mt-1">▸</span>
+                    <span>{highlight}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </FadeIn>
         ))}
       </div>
     </section>
