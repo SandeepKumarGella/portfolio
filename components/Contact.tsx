@@ -33,7 +33,7 @@ export default function Contact() {
       icon: FaPhone,
       label: 'Phone',
       value: '+91 9398415617',
-      href: 'tel:+9398415617',
+      href: 'tel:+919398415617',
     },
     {
       icon: FaEnvelope,

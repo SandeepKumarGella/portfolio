@@ -41,13 +41,11 @@ export default function About() {
       <div className="max-w-5xl mx-auto">
         <div className={`card ${isVisible ? 'fade-in' : 'opacity-0'}`}>
           <p className="text-lg md:text-xl text-navy-700 leading-relaxed mb-8">
-            Frontend Developer with <span className="font-bold text-teal-600 text-2xl">4 years of experience</span> delivering 
-            scalable, responsive, and high-performance web applications. Specialized in{' '}
-            <span className="font-bold text-navy-900">React.js</span>,{' '}
-            <span className="font-bold text-navy-900">Next.js</span> and{' '}
-            <span className="font-bold text-navy-900">micro frontend architecture</span>. Adept at collaborating with cross-functional teams, 
-            optimizing performance, and ensuring seamless user experiences. Skilled in Agile methodologies, CI/CD practices, 
-            and application support with a proven track record of modernizing legacy systems and enhancing enterprise applications.
+            Software Developer with <span className="font-bold text-teal-600 text-2xl">4+ years of experience</span> delivering 
+            enterprise-grade web applications for Fortune 500 clients — <span className="font-bold text-navy-900">Verizon</span> and <span className="font-bold text-navy-900">AT&T</span> using React.js, Next.js, and Micro Frontend (MFE) architecture.
+            Proven track record of migrating legacy JSP systems to Next.js, reducing technical debt by <span className="font-bold text-teal-600">40%</span>, and scaling a Progressive Web App across <span className="font-bold text-indigo-600">6 international markets</span> with full i18n support for KFC.
+            Adept at driving quality, achieving <span className="font-bold text-navy-900">85% unit test coverage</span>, resolving 200+ SonarQube quality issues, and reducing deployment errors by 30% via GitLab CI/CD pipelines.
+            Targeting engineering roles where performance optimization, clean architecture, and measurable product impact are priorities.
           </p>
 
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-8">

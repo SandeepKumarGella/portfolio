@@ -8,26 +8,30 @@ import FadeIn from './ui/FadeIn'
 import AnimatedBackground from './ui/AnimatedBackground'
 
 export default function Hero() {
+  const titles = ['Software Developer', 'React.js & Next.js Specialist', 'Micro Frontend Architect']
+  const [titleIndex, setTitleIndex] = useState(0)
   const [text, setText] = useState('')
-  const fullText = 'Frontend Developer'
   const [isDeleting, setIsDeleting] = useState(false)
   const [typingSpeed, setTypingSpeed] = useState(150)
 
   useEffect(() => {
     let timeout: NodeJS.Timeout
-    if (!isDeleting && text === fullText) {
+    const currentFullText = titles[titleIndex]
+
+    if (!isDeleting && text === currentFullText) {
       timeout = setTimeout(() => setIsDeleting(true), 2000)
     } else if (isDeleting && text === '') {
       setIsDeleting(false)
+      setTitleIndex((prev) => (prev + 1) % titles.length)
       setTypingSpeed(150)
     } else {
       timeout = setTimeout(() => {
-        setText(isDeleting ? text.slice(0, -1) : fullText.slice(0, text.length + 1))
+        setText(isDeleting ? text.slice(0, -1) : currentFullText.slice(0, text.length + 1))
         setTypingSpeed(isDeleting ? 75 : 150)
       }, typingSpeed)
     }
     return () => clearTimeout(timeout)
-  }, [text, isDeleting, fullText, typingSpeed])
+  }, [text, isDeleting, titleIndex, typingSpeed])
 
   return (
     <section id="home" className="min-h-screen flex items-center justify-center relative overflow-hidden pt-16">
@@ -64,19 +68,16 @@ export default function Hero() {
           </FadeIn>
 
           <FadeIn delay={0.8}>
-            <p className="text-lg md:text-xl text-navy-600 mb-12 max-w-2xl mx-auto leading-relaxed">
-              Building <span className="font-semibold text-navy-900">scalable</span>,{' '}
-              <span className="font-semibold text-navy-900">responsive</span>, and{' '}
-              <span className="font-semibold text-navy-900">high-performance</span> web applications
-              with React.js and Next.js.
+            <p className="text-lg md:text-xl text-navy-600 mb-12 max-w-3xl mx-auto leading-relaxed">
+              Software Developer with <span className="font-semibold text-navy-900">4+ years of experience</span> delivering enterprise-grade web applications for Fortune 500 clients — <span className="font-semibold text-teal-600">Verizon</span> and <span className="font-semibold text-indigo-600">AT&T</span> using React.js, Next.js, and Micro Frontend (MFE) architecture.
             </p>
           </FadeIn>
 
           <FadeIn delay={1.0}>
             <div className="flex flex-wrap justify-center gap-4 mb-16">
               <a
-                href="/Sandeep_Resume.pdf"
-                download="Sandeep_Resume.pdf"
+                href="/SandeepGella_Resume.pdf"
+                download="SandeepGella_Resume.pdf"
                 className="group flex items-center gap-2 px-8 py-4 bg-navy-900 text-white rounded-full hover:bg-navy-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-1 relative overflow-hidden"
               >
                 <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
@@ -95,6 +96,7 @@ export default function Hero() {
               <a
                 href="mailto:sandeepkumargella@gmail.com"
                 className="group flex items-center gap-2 px-6 py-4 bg-white text-navy-900 border border-gray-200 rounded-full hover:border-teal-500 hover:text-teal-600 transition-all duration-300 shadow-md hover:shadow-xl hover:-translate-y-1"
+                aria-label="Email"
               >
                 <FaEnvelope className="text-xl" />
               </a>
@@ -105,8 +107,8 @@ export default function Hero() {
             <div className="grid grid-cols-3 gap-8 md:gap-12 max-w-3xl mx-auto">
               {[
                 { number: '4+', label: 'Years Exp' },
-                { number: '10+', label: 'Projects' },
-                { number: '100%', label: 'Dedicated' },
+                { number: '40%', label: 'Tech Debt Cut' },
+                { number: '30%', label: 'Less Deploy Errors' },
               ].map((stat, index) => (
                 <div key={index} className="text-center group cursor-default">
                   <div className="text-3xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-indigo-600 font-display mb-1 group-hover:scale-110 transition-transform duration-300">

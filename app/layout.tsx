@@ -16,13 +16,13 @@ const poppins = Poppins({
 })
 
 export const metadata: Metadata = {
-  title: 'Gella Sandeep Kumar - Frontend Developer | React.js & Next.js Specialist',
-  description: 'Experienced Frontend Developer with 4 years of expertise in React.js, Next.js, and modern web technologies. Specialized in building scalable, responsive web applications.',
-  keywords: 'Frontend Developer, React.js, Next.js, JavaScript, TypeScript, Web Development',
+  title: 'Gella Sandeep Kumar - Software Developer | React.js | Next.js | Node.js | Micro Frontend Architecture',
+  description: 'Software Developer with 4+ years of experience delivering enterprise-grade web applications for Fortune 500 clients — Verizon and AT&T using React.js, Next.js, and Micro Frontend (MFE) architecture.',
+  keywords: 'Gella Sandeep Kumar, Software Developer, React.js, Next.js, Node.js, Micro Frontend, MFE, TypeScript, JavaScript, Web Development, Cognizant, Verizon, AT&T',
   authors: [{ name: 'Gella Sandeep Kumar' }],
   openGraph: {
-    title: 'Gella Sandeep Kumar - Frontend Developer',
-    description: 'Experienced Frontend Developer specializing in React.js and Next.js',
+    title: 'Gella Sandeep Kumar - Software Developer',
+    description: 'Software Developer with 4+ years of experience delivering enterprise-grade web applications for Fortune 500 clients using React.js, Next.js, and Micro Frontend architecture.',
     type: 'website',
   },
 }

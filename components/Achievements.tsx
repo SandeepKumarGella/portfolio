@@ -1,7 +1,7 @@
 'use client'
 
 import { useState, useEffect, useRef } from 'react'
-import { FaTrophy, FaRocket, FaCode, FaChartLine, FaUsers } from 'react-icons/fa'
+import { FaTrophy, FaRocket, FaCode, FaBug, FaSync, FaAward } from 'react-icons/fa'
 
 export default function Achievements() {
   const [isVisible, setIsVisible] = useState(false)
@@ -30,20 +30,34 @@ export default function Achievements() {
 
   const achievements = [
     {
-      text: 'Successfully modernized legacy applications into Next.js, reducing maintenance overhead.',
+      text: "Eliminated 40% of AT&T's frontend technical debt by leading a full JSP-to-Next.js migration across 5+ production modules.",
       icon: FaRocket,
+      color: 'bg-indigo-100 text-indigo-600 border-indigo-200'
     },
     {
-      text: 'Delivered reusable design systems that improved UI consistency across enterprise projects.',
+      text: 'Elevated unit test coverage from 60% to 85% using Jest and React Testing Library, directly reducing production bugs by 25%.',
       icon: FaCode,
+      color: 'bg-teal-100 text-teal-600 border-teal-200'
     },
     {
-      text: 'Optimized React.js applications for performance, improving load times and user engagement.',
-      icon: FaChartLine,
+      text: 'Standardized UI consistency by 40% at KFC Global through a reusable component design system, tracked by QA defect rate reduction.',
+      icon: FaTrophy,
+      color: 'bg-yellow-100 text-yellow-600 border-yellow-200'
     },
     {
-      text: 'Collaborated across global teams ensuring smooth delivery of large-scale projects.',
-      icon: FaUsers,
+      text: 'Resolved 200+ SonarQube code quality issues, measurably reducing security vulnerabilities and improving overall codebase health scores.',
+      icon: FaBug,
+      color: 'bg-red-100 text-red-600 border-red-200'
+    },
+    {
+      text: 'Owned end-to-end CI/CD pipeline implementation on GitLab, reducing deployment errors by 30% across all release cycles.',
+      icon: FaSync,
+      color: 'bg-blue-100 text-blue-600 border-blue-200'
+    },
+    {
+      text: 'Recognized as Associate of the Month and recipient of multiple client appreciation awards for delivering high-quality solutions under tight deadlines.',
+      icon: FaAward,
+      color: 'bg-purple-100 text-purple-600 border-purple-200'
     },
   ]
 
@@ -62,15 +76,15 @@ export default function Achievements() {
             {achievements.map((achievement, index) => (
               <div
                 key={index}
-                className={`p-5 rounded-lg bg-white border border-gray-200 hover:border-teal-300 transition-all duration-300 ${isVisible ? 'fade-in' : 'opacity-0'}`}
-                style={{ animationDelay: `${index * 0.15}s` }}
+                className={`p-6 rounded-lg bg-white border border-gray-200 hover:border-teal-300 hover:shadow-md transition-all duration-300 ${isVisible ? 'fade-in' : 'opacity-0'}`}
+                style={{ animationDelay: `${index * 0.12}s` }}
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 p-3 rounded-lg bg-teal-100 text-teal-600">
+                  <div className={`flex-shrink-0 p-3.5 rounded-lg border ${achievement.color}`}>
                     <achievement.icon className="text-xl" />
                   </div>
                   <div className="flex-1">
-                    <p className="text-base md:text-lg text-navy-700 leading-relaxed">
+                    <p className="text-navy-700 leading-relaxed font-medium text-sm md:text-base">
                       {achievement.text}
                     </p>
                   </div>
@@ -83,4 +97,3 @@ export default function Achievements() {
     </section>
   )
 }
-
